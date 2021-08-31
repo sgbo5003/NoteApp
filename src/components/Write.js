@@ -35,12 +35,17 @@ const Write = (props) => {
 
   // 제출 제어
   const onSubmit = () => {
-    notes.push({
-      id: id,
-      title: inputData.title,
-      content: inputData.content,
-    });
-    localStorage.setItem("writeData", JSON.stringify(notes));
+    if (inputData.title == "" || inputData.content == "") {
+      alert("제목과 내용을 모두 입력해주세요");
+    } else {
+      notes.push({
+        id: id,
+        title: inputData.title,
+        content: inputData.content,
+      });
+      localStorage.setItem("writeData", JSON.stringify(notes));
+      history.push("/");
+    }
   };
 
   return (

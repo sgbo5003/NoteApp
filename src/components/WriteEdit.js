@@ -26,13 +26,17 @@ const WriteEdit = (props) => {
   };
 
   const onSubmit = () => {
-    const noteIndex = getDataJSON.findIndex((data) => data.id === paramsId);
-    getDataJSON.splice(noteIndex, 1, {
-      id: paramsId,
-      title: inputData.title,
-      content: inputData.content,
-    });
-    localStorage.setItem("writeData", JSON.stringify(getDataJSON));
+    if (inputData.title == "" || inputData.content == "") {
+      alert("제목과 내용을 모두 입력해주세요");
+    } else {
+      const noteIndex = getDataJSON.findIndex((data) => data.id === paramsId);
+      getDataJSON.splice(noteIndex, 1, {
+        id: paramsId,
+        title: inputData.title,
+        content: inputData.content,
+      });
+      localStorage.setItem("writeData", JSON.stringify(getDataJSON));
+    }
   };
 
   const onRemoveHandler = () => {
