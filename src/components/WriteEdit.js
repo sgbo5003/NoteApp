@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import moment from "moment";
 
 const WriteEdit = (props) => {
   const history = useHistory();
-  const timestamp = moment().valueOf();
+
   const paramsId = props.location.search.split("=")[1];
   const getData = localStorage.getItem("writeData");
   const getDataJSON = JSON.parse(getData);
@@ -32,8 +31,6 @@ const WriteEdit = (props) => {
       id: paramsId,
       title: inputData.title,
       content: inputData.content,
-      createTime: timestamp,
-      updateTime: timestamp,
     });
     localStorage.setItem("writeData", JSON.stringify(getDataJSON));
   };
@@ -61,11 +58,6 @@ const WriteEdit = (props) => {
           <button type="button" onClick={onPreviousHandler}>
             Back
           </button>
-        </div>
-        <div>
-          <span>{`Last edited ${moment(
-            getDataJSON.updateTime
-          ).fromNow()}`}</span>
         </div>
       </div>
       <div className="write_title">
