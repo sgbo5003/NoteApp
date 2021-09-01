@@ -83,7 +83,7 @@ const WriteEdit = (props) => {
           onChange={onInputChangeHandler}
         />
       </div>
-      <div className="write_btn_container">
+      <div className="write_edit_btn_container">
         <button type="button" onClick={onRemoveHandler}>
           Remove Note
         </button>

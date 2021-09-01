@@ -91,3 +91,9 @@ button {
   justify-content: flex-end;
   margin-top: 10px;
 }
+
+.write_edit_btn_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
