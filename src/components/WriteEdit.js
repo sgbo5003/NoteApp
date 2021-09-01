@@ -36,6 +36,7 @@ const WriteEdit = (props) => {
         content: inputData.content,
       });
       localStorage.setItem("writeData", JSON.stringify(getDataJSON));
+      history.push("/");
     }
   };
 
@@ -45,6 +46,7 @@ const WriteEdit = (props) => {
       getDataJSON.splice(noteIndex, 1);
     }
     localStorage.setItem("writeData", JSON.stringify(getDataJSON));
+    history.push("/");
   };
 
   useEffect(() => {
