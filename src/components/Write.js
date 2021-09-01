@@ -75,7 +75,6 @@ const Write = (props) => {
         />
       </div>
       <div className="write_btn_container">
-        <button type="button">Remove Note</button>
         <button type="button" onClick={onSubmit}>
           Done
         </button>
